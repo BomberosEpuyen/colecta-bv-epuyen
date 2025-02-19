@@ -36,7 +36,7 @@ if total_recaudado <= meta_parcial:
     ax.barh(["Progreso"], [meta - total_recaudado], left=[total_recaudado], color="red")
 else:
     # Parte verde hasta la meta parcial
-    ax.barh(["Progreso"], [meta_parcial], color="green")
+    ax.barh(["Progreso"], [meta_parcial], color="orange")
     # Parte naranja entre la meta parcial y lo recaudado
     ax.barh(["Progreso"], [total_recaudado - meta_parcial], left=[meta_parcial], color="orange")
     # Parte roja si aún falta dinero
