@@ -10,8 +10,9 @@ df = pd.read_csv(url)
 meta = 75600000  # Costo total para equipar a 33 bomberos
 meta_parcial = 54000000  # Punto donde cambia a naranja
 
-# Calcular total recaudado
+# Calcular total recaudado y porcentaje
 total_recaudado = df["monto recaudado"].sum()
+porcentaje_recaudado = (total_recaudado / meta) * 100
 
 # Mostrar datos en la app
 st.title("Bomberos Voluntarios de Epuyen")
@@ -31,15 +32,12 @@ fig, ax = plt.subplots(figsize=(8, 1.5))
 
 # Determinar colores según el avance
 if total_recaudado <= meta_parcial:
-    ax.barh(["Progreso"], [total_recaudado], color="green", label="Recaudado")
-    ax.barh(["Progreso"], [meta - total_recaudado], left=[total_recaudado], color="red", label="Faltante")
-else:
-    # Parte verde hasta la meta parcial
-    ax.barh(["Progreso"], [meta_parcial], color="green")
-    # Parte naranja desde la meta parcial hasta el total recaudado
-    ax.barh(["Progreso"], [total_recaudado - meta_parcial], left=[meta_parcial], color="orange")
-    # Parte roja (lo que falta hasta la meta final)
+    ax.barh(["Progreso"], [total_recaudado], color="green")
     ax.barh(["Progreso"], [meta - total_recaudado], left=[total_recaudado], color="red")
+else:
+    ax.barh(["Progreso"], [meta_parcial], color="green")  # Parte verde hasta meta parcial
+    ax.barh(["Progreso"], [total_recaudado - meta_parcial], left=[meta_parcial], color="orange")  # Naranja
+    ax.barh(["Progreso"], [meta - total_recaudado], left=[total_recaudado], color="red")  # Rojo (faltante)
 
 # Formatear ejes
 ax.set_xlim(0, meta)
@@ -47,9 +45,6 @@ ax.set_xlabel("Monto recaudado")
 ax.set_xticks([0, meta * 0.25, meta * 0.50, meta * 0.75, meta])
 ax.set_xticklabels(["0%", "25%", "50%", "75%", "100%"])
 ax.grid(axis="x", linestyle="--", alpha=0.5)
-
-# Ocultar leyenda para evitar cuadro interno
-#ax.get_legend().remove()
 
 # Mostrar gráfico en Streamlit
 st.pyplot(fig)
@@ -62,13 +57,11 @@ st.markdown(
     """
     **Asociación de Bomberos Voluntarios de Epuyen**  
     Colecta 2025 destinada a la compra de un **Autobomba Forestal 4X4**.  
-     **Email de contacto:** [comisiondirectivabvepuyen@gmail.com](mailto:comisiondirectivabvepuyen@gmail.com)  
-     **Colaborá aquí:** Alias: **bomberosepuyen**  
-     **Seguinos en redes sociales:**  
+    📧 **Email de contacto:** [comisiondirectivabvepuyen@gmail.com](mailto:comisiondirectivabvepuyen@gmail.com)  
+    💳 **Colaborá aquí:** Alias: **bomberosepuyen**  
+    📲 **Seguinos en redes sociales:**  
     - Instagram: [@bomberos_Epuyen](https://www.instagram.com/bomberos_epuyen/?igsh=MXUxNTZiMTVkdjZyeA%3D%3D#)  
     - Facebook: [Bomberos Voluntarios Epuyen](https://www.facebook.com/share/15U5CUYpP8/)  
     """,
     unsafe_allow_html=True
 )
-
-
