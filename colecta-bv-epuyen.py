@@ -15,7 +15,7 @@ total_recaudado = df["monto recaudado"].sum()
 
 # Mostrar datos en la app
 st.title("Bomberos Voluntarios de Epuyen")
-st.subtitle("Avance de la Colecta")
+st.title("Avance de la Colecta")
 
 # Mostrar monto recaudado vs meta
 st.markdown(
