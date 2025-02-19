@@ -13,6 +13,19 @@ meta_parcial = 54000000  # Punto donde cambia a naranja
 # Calcular total recaudado
 total_recaudado = df["monto recaudado"].sum()
 
+# Mostrar datos en la app
+st.title("Bomberos Voluntarios de Epuyen")
+st.subtitle("Avance de la Colecta")
+
+# Mostrar monto recaudado vs meta
+st.markdown(
+    f"""
+    ### 🎯 **Objetivo:** ${meta:,.0f}  
+    ### 💰 **Recaudado:** ${total_recaudado:,.0f} ({porcentaje_recaudado:.2f}%)
+    """,
+    unsafe_allow_html=True
+)
+
 # Crear gráfico de barra de progreso
 fig, ax = plt.subplots(figsize=(8, 1.5))
 
