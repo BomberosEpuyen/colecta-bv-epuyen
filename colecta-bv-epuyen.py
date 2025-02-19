@@ -66,4 +66,4 @@ st.markdown(
 
     unsafe_allow_html=True
 )
-st.image("350984528_1907305209646034_7762816327577734180_n.jpg", caption="Bomberos Voluntarios de Epuyén", use_container_width=True)
+st.image("350984528_1907305209646034_7762816327577734180_n.jpg", caption="Bomberos Voluntarios de Epuyén", width=200)
