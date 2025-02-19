@@ -61,11 +61,14 @@ st.markdown(
     """
     **Asociación de Bomberos Voluntarios de Epuyen**  
     Colecta 2025 destinada a la compra de un **Autobomba Forestal 4X4**.  
-    📧 **Email de contacto:** [comisiondirectivabvepuyen@gmail.com](mailto:comisiondirectivabvepuyen@gmail.com)  
-    💳 **Colaborá aquí:** Alias: **bomberosepuyen**  
+    
+    💳 **Colaborá aquí:** Alias: **bomberosepuyen** 
+
+    
     📲 **Seguinos en redes sociales:**  
     - Instagram: [@bomberos_Epuyen](https://www.instagram.com/bomberos_epuyen/)  
     - Facebook: [Bomberos Voluntarios Epuyen](https://www.facebook.com/share/15U5CUYpP8/)  
+    📧 **Email de contacto:** [comisiondirectivabvepuyen@gmail.com](mailto:comisiondirectivabvepuyen@gmail.com)  
     """,
     unsafe_allow_html=True
 )
