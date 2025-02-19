@@ -66,4 +66,6 @@ st.markdown(
 
     unsafe_allow_html=True
 )
+st.markdown("<p style='text-align: center;'>", unsafe_allow_html=True)
 st.image("350984528_1907305209646034_7762816327577734180_n.jpg", caption="Bomberos Voluntarios de Epuyén", width=200)
+st.markdown("</p>", unsafe_allow_html=True)
