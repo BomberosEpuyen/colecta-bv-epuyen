@@ -39,14 +39,14 @@ else:
     ax.barh(["Recaudado"], [meta - total_recaudado], left=[total_recaudado], color="red", label="Faltante")
 
 # Barra extra para representar la meta total como referencia
-ax.barh(["Objetivo"], [meta], color="gray", alpha=0.3, label="Meta Total")
+#ax.barh(["Objetivo"], [meta], color="gray", alpha=0.3, label="Meta Total")
 
 # Formatear ejes
 ax.set_xlim(0, meta)
 ax.set_xlabel("Monto recaudado")
 ax.set_xticks([0, meta * 0.25, meta * 0.50, meta * 0.75, meta])
 ax.set_xticklabels(["0%", "25%", "50%", "75%", "100%"])
-ax.legend()
+#ax.legend()
 ax.grid(axis="x", linestyle="--", alpha=0.5)
 
 # Mostrar gráfico en Streamlit
