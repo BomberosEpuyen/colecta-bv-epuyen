@@ -36,7 +36,7 @@ ax.set_xticklabels(["0%", "25%", "50%", "75%", "100%"])
 ax.grid(axis="x", linestyle="--", alpha=0.5)
 
 # Ocultar leyenda para evitar cuadro interno
-ax.get_legend().remove()
+#ax.get_legend().remove()
 
 # Mostrar gráfico en Streamlit
 st.pyplot(fig)
