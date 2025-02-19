@@ -36,9 +36,9 @@ if total_recaudado <= meta_parcial:
     ax.barh(["Progreso"], [meta - total_recaudado], left=[total_recaudado], color="red")
 else:
     # Parte verde hasta la meta parcial
-    ax.barh(["Progreso"], [meta_parcial], color="orange")
+    ax.barh(["Progreso"], [meta_parcial], color="green")
     # Parte naranja entre la meta parcial y lo recaudado
-    ax.barh(["Progreso"], [total_recaudado - meta_parcial], left=[meta_parcial], color="red")
+    ax.barh(["Progreso"], [total_recaudado - meta_parcial], left=[meta_parcial], color="orange")
     # Parte roja si aún falta dinero
     if total_recaudado < meta:
         ax.barh(["Progreso"], [meta - total_recaudado], left=[total_recaudado], color="red")
@@ -74,3 +74,4 @@ st.markdown(
 st.markdown("<p style='text-align: center;'>", unsafe_allow_html=True)
 st.image("350984528_1907305209646034_7762816327577734180_n.jpg", caption="Bomberos Voluntarios de Epuyén", width=200)
 st.markdown("</p>", unsafe_allow_html=True)
+
